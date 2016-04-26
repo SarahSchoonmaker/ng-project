@@ -75,6 +75,10 @@
           song.playing = false;
         };       
 
+      /**
+        * @function previous
+        * @desc Set song to previous song in album
+        */
       SongPlayer.previous = function() {
      var currentSongIndex = getSongIndex(SongPlayer.currentSong);
      currentSongIndex--;
@@ -88,6 +92,25 @@
          playSong(song);
      }
       };
+
+       /**
+        * @function next
+        * @desc Set song to next song in album
+        */
+        SongPlayer.next = function() {
+            var currentSongIndex = getSongIndex(SongPlayer.currentSong);
+            currentSongIndex++;
+
+            var lastSongIndex = currentAlbum.songs.length - 1;
+
+            if (currentSongIndex > lastSongIndex) {
+                stopSong(SongPlayer.currentSong);
+            } else {
+                var song = currentAlbum.songs[currentSongIndex];
+                setSong(song);
+                playSong(song);
+            }
+        };
  
      angular
          .module('blocJams')
