@@ -53,8 +53,8 @@
               notifyOnChange(scope.value);
          };
 
-        scope.trackThumb = function() {
-         $document.bind('mousemove.thumb', function(event) {
+            scope.trackThumb = function() {
+            $document.bind('mousemove.thumb', function(event) {
             var percent = calculatePercent(seekBar, event);
             scope.$apply(function() {
             scope.value = percent * scope.max;
@@ -62,9 +62,9 @@
         }); // end of trackThumb method
 
             var notifyOnChange = function(newValue) {
-                if (typeof scope.onChange === 'function') {
-                scope.onChange({value: newValue});
-                }
+              if (typeof scope.onChange === 'function') {
+              scope.onChange({value: newValue});
+              }
             }; // end of link method
      });
 
@@ -81,7 +81,7 @@
          $document.unbind('mouseup.thumb');
         });
      };
-         }
+        }
      };
      }
  

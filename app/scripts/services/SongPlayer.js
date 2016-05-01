@@ -52,7 +52,6 @@
          });
      });
 
-
       SongPlayer.currentSong = song;
 
     };
@@ -134,6 +133,17 @@
              currentBuzzObject.setTime(time);
          }
      };
+
+     /**
+     * @function setVolume
+     * @desc Set volume of the song player
+     * @param {Number} volume
+     */
+    SongPlayer.setVolume = function(volume) {
+      if (currentBuzzObject) {
+        currentBuzzObject.setVolume(volume)
+      }
+    };
  
      angular
        .module('blocJams')
