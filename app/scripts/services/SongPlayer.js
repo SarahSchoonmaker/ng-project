@@ -148,6 +148,25 @@
         currentBuzzObject.setVolume(volume)
       }
     };
+
+    /**
+    * @function toggleMute
+    * @desc mutes or unmutes currently playing song
+    */
+    SongPlayer.toggleMute = function() {
+      if (currentBuzzObject) {
+        if (!currentBuzzObject.isMuted()) {
+          currentBuzzObject.mute();
+          SongPlayer.muted = true;
+        } else {
+          currentBuzzObject.unmute();
+          SongPlayer.muted = false;
+        }
+      }
+    }
+    
+    return SongPlayer;
+  }
  
      angular
        .module('blocJams')
