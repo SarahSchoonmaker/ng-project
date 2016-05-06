@@ -52,6 +52,10 @@
          });
      });
 
+      currentBuzzObject.bind('ended', function(event) {
+         SongPlayer.next();
+       });  //added autoplay feature
+
       SongPlayer.currentSong = song;
 
     };
